@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Aplicación</title>
+</head>
+<body>
+    <h1>Bienvenido, Frank</h1>
+    
+    <!-- Campos -->
+    <form id="formulario">
+        <label for="nombre">nombre:</label>
+        <input type="text" id="nombre" name="nombre"><br><br>
+        
+        <label for="email">email:</label>
+        <input type="text" id="email" name="email"><br><br>
+        
+        <label for="contraseña">contraseña:</label>
+        <input type="text" id="contraseña" name="contraseña"><br><br>
+
+        <!-- Botones -->
+        <button type="button" onclick="insertar()">Insertar</button>
+        <button type="button" onclick="seleccionar()">Seleccionar</button>
+        <button type="button" onclick="modificar()">Modificar</button>
+        <button type="button" onclick="eliminar()">Eliminar</button>
+    </form>
+
+    <!-- Funciones JavaScript -->
+    <script>
+        function insertar() {
+            var formdata = new FormData(document.getElementById("formulario"));
+            formdata.append("insertar", "true");
+
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    alert(this.responseText);
+                }
+            };
+            xhttp.open("POST", "aplicacion.php", true);
+            xhttp.send(formdata);
+        }
+
+        function seleccionar() {
+            var formdata = new FormData();
+            formdata.append("seleccionar", "true");
+
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("resultado").innerHTML = this.responseText;
+                }
+            };
+            xhttp.open("POST", "aplicacion.php", true);
+            xhttp.send(formdata);
+        }
+
+        function modificar() {
+            // Lógica para modificar datos
+        }
+
+        function eliminar() {
+            // Lógica para eliminar datos
+        }
+    </script>
+
