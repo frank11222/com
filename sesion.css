@@ -1,0 +1,105 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+video{
+    position: fixed;
+    width: 100%;
+    min-width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: -1;
+    
+
+}
+body{
+    font-family:-apple-system,Oxygen, sans-serif; /*/ a*/
+    background: rgb(144, 214, 251);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+    font-family: "Akaya Telivigala", cursive;
+}
+.contenedor{
+    background: rgb(0, 183, 255);
+    border-radius: 10px;
+    box-shadow: 19px 20px 8px -9px rgba(0, 0, 0, 0.2);/*sirve para poder poner sombras en un recuadro */
+    overflow: hidden; 
+    width: 400px;
+    max-width: 100%;
+
+}
+.cabecera{
+    background: #0a8ef2;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    border-bottom: 1px solid #000000;
+    padding: 20px 40px;
+}
+#formulario{
+    padding: 30px 20px;
+}
+.form-control{
+    margin-bottom: 7px;
+    padding-bottom: 20px;
+    position: relative;
+}
+.form-control label{
+    display: inline-block;
+    margin-bottom: 7px;
+    font:weight 200px;
+}
+.form-control input{
+    border: none;
+    border-radius: 10px;
+    background-color:rgb(119, 78, 231);
+    display: block;
+    font-family: "Akaya Telivigala", cursive;
+    font-size: 16px;      /*16 px es igual aun 1 en*/
+    padding: 12px;
+    width: 100%;
+}
+.form-control input:focus{
+    outline: none;
+    font-family: "Akaya Telivigala", cursive;   
+}
+.form-control.Ok input{
+    border: 0.1px solid;
+    border-color: rgb(17, 217, 228);
+    font-family: "Akaya Telivigala", cursive;
+}
+.form-control.Falla input{
+    border: 0.1px solid;
+    border-color: #f40707;
+    font-family: "Akaya Telivigala", cursive;
+}
+#formulario button{
+    background: #17d805;
+    border: 1px solid #000000;
+    border-radius: 2px;
+    color:aliceblue;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+}
+.form-control p{
+    visibility: hidden;
+    position: absolute;
+    font-size: small;
+    font-weight: 500;
+    text-align: right;
+}
+.form-control.Falla p{
+    visibility: visible;
+    color: #f40707;
+}
+button{
+    font-family: "Akaya Telivigala", cursive;
+    border-radius: 10px;
+}
+

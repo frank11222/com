@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validación de formularios</title>
+    <link rel="stylesheet" href="sesion.css">
+    <link href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap" rel="stylesheet">
+    <style>
+        .registrarse {
+            color: blue;
+            cursor: pointer;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <video src="Galaxia.mp4" autoplay loop muted poster="logo a.jpg"></video>
+    <div class="contenedor">
+        <div class="cabecera">
+            <h2>INICIO DE SESION</h2>
+        </div>
+        <form id="formulario" action="iniciar.php" method="post">
+            <div class="form-control">
+                <label>Nombre</label>
+                <input type="text" id="Usuario" name="nombre" required>
+                <p></p>
+            </div>
+            <div class="form-control">
+                <label for="E-mail">E-mail</label>
+                <input type="email" id="email" name="email" required>
+                <p></p>
+            </div>
+            <div class="form-control">
+                <label for="pass">Contraseña</label>
+                <input type="password" id="pass" name="password" required>
+                <p></p>
+            </div>
+            <button type="submit">INGRESAR</button>
+        </form>
+        <p class="registrarse">Registrarse</p>
+    </div>
+    <script src="validacion.js"></script>
+    <script>
+        const registrarseLink = document.querySelector('.registrarse');
+        registrarseLink.addEventListener('click', () => {
+            window.location.href = 'registrarse.html';
+        });
+    </script>
+</body>
+</html>
